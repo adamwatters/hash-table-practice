@@ -13,13 +13,11 @@ String.prototype.hashCode = function() {
 String.prototype.myHashCode = function() {
 	var hash;
 	var numString = "";
-	var stringCopy = this + "aaaaa";
-
-	for (var i = 0; i < 4; i++) {
+	var stringCopy = this + "*****";
+	for (var i = 0; i < 2; i++) {
 		var lastIndex = stringCopy.charCodeAt(i).toString().length - 1;
 		numString += stringCopy.charCodeAt(i).toString()[lastIndex];
 	}
-	console.log(numString);
 	var hash = parseInt(numString);
 	return hash;
 }
@@ -33,7 +31,7 @@ var makeRandomStrings = function(numStrings) {
 }
 
 var realHashConvert = function(string) {
-	return string.hashCode() % 5000;;
+	return string.hashCode() % 50 + 50;;
 }
 
 var myHashConvert = function(string) {

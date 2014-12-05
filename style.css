@@ -1,0 +1,13 @@
+.chart {
+	height: 100%;
+}
+
+.chart rect {
+  fill: "blue";
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
