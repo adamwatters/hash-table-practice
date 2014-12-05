@@ -64,11 +64,15 @@ var runSpeedTests = function(hashType, numLookUps, minNumKeys, maxNumKeys, step)
 // console.log(lookUpSpeedTest(listHash, 10000, 10000));
 // console.log(lookUpSpeedTest(nativeHash, 1000000, 1000000));
 
-// var nativeResult = runSpeedTests("native", 10000, 1, 1000, 10);
-// var listResult = runSpeedTests("list", 10000, 1, 1000, 10);
-// console.log(nativeResult);
+var nativeResult = runSpeedTests("native", 10000, 1, 1000, 10);
+var listResult = runSpeedTests("list", 10000, 1, 1000, 10);
+
+makeHistogram(nativeResult, ".chartSTN")
+makeHistogram(listResult, ".chartSTL")
+
+console.log(nativeResult);
 // console.log(nativeResult.length)
 
-// console.log(listResult);
+console.log(listResult);
 // console.log(listResult.length)
 
