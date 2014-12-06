@@ -1,5 +1,4 @@
 var makeHistogram = function(data, target) {
-
 	var width = 420,
 	    barHeight = 6;
 

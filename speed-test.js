@@ -6,6 +6,9 @@ var hashMaker = function(hashType){
 	if (hashType === "native") {
 		return new NativeHash();
 	};
+	if (hashType === "my") {
+		return new MyHash();
+	};
 	console.log("invalid selection - options are 'list' or 'native'")
 }
 
@@ -66,13 +69,18 @@ var runSpeedTests = function(hashType, numLookUps, minNumKeys, maxNumKeys, step)
 
 var nativeResult = runSpeedTests("native", 10000, 1, 1000, 10);
 var listResult = runSpeedTests("list", 10000, 1, 1000, 10);
+var myResult = runSpeedTests("my", 10000, 1, 1000, 10);
 
 makeHistogram(nativeResult, ".chartSTN")
 makeHistogram(listResult, ".chartSTL")
+makeHistogram(myResult, ".chartSTM")
 
 console.log(nativeResult);
-// console.log(nativeResult.length)
+console.log(nativeResult.length)
 
 console.log(listResult);
-// console.log(listResult.length)
+console.log(listResult.length)
+
+console.log(myResult);
+console.log(myResult.length)
 
